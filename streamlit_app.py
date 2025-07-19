@@ -75,3 +75,14 @@ else:
     st.dataframe(filtered_df.iloc[start_idx:end_idx][[
         'title', 'type', 'country', 'release_year', 'rating', 'duration', 'listed_in', 'description'
     ]])
+    # 📥 Download filtered results
+import io
+
+csv = filtered_df.to_csv(index=False)
+st.download_button(
+    label="⬇️ Download CSV",
+    data=csv,
+    file_name='filtered_netflix_titles.csv',
+    mime='text/csv'
+)
+
