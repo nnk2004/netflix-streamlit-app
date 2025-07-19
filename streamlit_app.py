@@ -55,3 +55,4 @@ if search_term:
         filtered_df['title'].str.contains(search_term, case=False, na=False) |
         filtered_df['description'].str.contains(search_term, case=False, na=False)
     ]
+st.write(f"🔎 Results found: {len(filtered_df)}")
