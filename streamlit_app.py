@@ -46,4 +46,12 @@ st.dataframe(filtered_df.iloc[start_idx:end_idx][[
     'listed_in',
     'description'
 ]])
+# 🔍 Search bar
+search_term = st.text_input("Search by Title or Description")
+
+if search_term:
+    filtered_df = filtered_df[
+        filtered_df['title'].str.contains(search_term, case=False, na=False) |
+        filtered_df['description'].str.contains(search_term, case=False, na=False)
+    ]
 
