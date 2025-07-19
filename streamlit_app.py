@@ -3,7 +3,7 @@ import pandas as pd
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("netflix_titles.csv")
+    df = pd.read_csv("netflix_titles_sample.csv")
     df['listed_in'] = df['listed_in'].fillna('')
     df['country'] = df['country'].fillna('Unknown')
     df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')
