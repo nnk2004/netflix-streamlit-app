@@ -67,7 +67,7 @@ total_pages = (total_results - 1) // results_per_page + 1
 if total_results == 0:
     st.warning("No results found. Try a different search or filter.")
 else:
-    page = st.number_input("Select page", min_value=1, max_value=total_pages, value=1, step=1)
+    page = st.number_input("Select page", min_value=1, max_value=total_pages, value=1, step=1, key="pagination")
     start_idx = (page - 1) * results_per_page
     end_idx = start_idx + results_per_page
 
@@ -75,4 +75,3 @@ else:
     st.dataframe(filtered_df.iloc[start_idx:end_idx][[
         'title', 'type', 'country', 'release_year', 'rating', 'duration', 'listed_in', 'description'
     ]])
-
