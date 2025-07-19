@@ -25,4 +25,25 @@ if genre_filter:
 filtered_df = filtered_df[filtered_df['release_year'].between(*year_range)]
 
 st.markdown(f"### 📊 Showing {len(filtered_df)} titles")
-st.dataframe(filtered_df[['title', 'type', 'country', 'release_year', 'rating']].head(20))
+# 🎯 Pagination logic
+results_per_page = 50
+total_results = len(filtered_df)
+total_pages = (total_results - 1) // results_per_page + 1
+
+page = st.number_input("Select page", min_value=1, max_value=total_pages, value=1, step=1)
+start_idx = (page - 1) * results_per_page
+end_idx = start_idx + results_per_page
+
+# 📊 Display paginated results
+st.markdown(f"### Showing results {start_idx + 1} to {min(end_idx, total_results)} of {total_results}")
+st.dataframe(filtered_df.iloc[start_idx:end_idx][[
+    'title',
+    'type',
+    'country',
+    'release_year',
+    'rating',
+    'duration',
+    'listed_in',
+    'description'
+]])
+
