@@ -1,0 +1,4 @@
+show_id,type,title,director,cast,country,date_added,release_year,rating,duration,listed_in,description
+s1,Movie,Inception,Christopher Nolan,"Leonardo DiCaprio, Joseph Gordon-Levitt",United States,"September 1, 2020",2010,PG-13,148 min,"Sci-Fi & Fantasy, Action & Adventure",A thief who steals corporate secrets through use of dream-sharing technology.
+s2,TV Show,Stranger Things,Unknown,"Winona Ryder, David Harbour",United States,"July 15, 2016",2016,TV-14,3 Seasons,"Horror, Sci-Fi & Fantasy",A group of young friends witnesses supernatural forces and secret experiments.
+s3,Movie,The Social Dilemma,Jeff Orlowski,Tristan Harris,United States,"October 1, 2020",2020,PG,94 min,Documentaries,This documentary-drama hybrid reveals the dangerous human impact of social networking.
